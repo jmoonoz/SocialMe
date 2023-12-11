@@ -1,17 +1,22 @@
 import { useState } from "react";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Navbar from "./components/Navbar";
-import Rightbar from "./components/Rightbar";
-import Leftbar from "./components/Leftbar";
+import LeftBar from "./components/LeftBar";
+import RightBar from "./components/RightBar";
 import Home from "./pages/Home";
 import Profile from "./pages/profile/profile";
 import "./index.css";
 
 function App() {
   // will automatically send user to login if not logged in
-  const CurrentUser = false;
+  const CurrentUser = true;
 
   // page login
   const Layout = () => {
@@ -19,9 +24,11 @@ function App() {
       <div>
         <Navbar />
         <div style={{ display: "flex" }}>
-          <Leftbar />
-          <Outlet />
-          <Rightbar />
+          <LeftBar />
+          <div style={{ flex: 6 }}>
+            <Outlet />
+          </div>
+          <RightBar />
         </div>
       </div>
     );
@@ -30,7 +37,7 @@ function App() {
   //if no current user itll return to login
   const ProtectedRoute = ({ children }) => {
     if (!CurrentUser) {
-      return <Navbar to="/login" />;
+      return <Navigate to="/login/" />;
     }
     return children;
   };
@@ -40,7 +47,6 @@ function App() {
     {
       path: "/",
       element: (
-        //  protects all paged in the layout
         <ProtectedRoute>
           <Layout />
         </ProtectedRoute>

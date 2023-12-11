@@ -1,8 +1,12 @@
-import React from 'react'
-import "../../style/profile.scss"
+import React from 'react';
 
-export default function profile() {
+const profile = () => {
   return (
-    <div className='profile'>profile</div>
-  )
-}
+    <div>
+      profile
+      
+    </div>
+  );
+};
+
+export default profile;
