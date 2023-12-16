@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   createBrowserRouter,
   Navigate,
@@ -14,15 +14,21 @@ import Home from "./pages/Home";
 import Profile from "./pages/profile/profile";
 import "./index.css";
 import "./style/style.scss"
+import { DarkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/authContext";
 
 function App() {
   // will automatically send user to login if not logged in
-  const CurrentUser = true;
+  const {CurrentUser} = useContext(AuthContext);
+
+  const {darkMode} = useContext(DarkModeContext);
+
+
 
   // page login
   const Layout = () => {
     return (
-      <div className="theme-dark">
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <Navbar />
         <div style={{ display: "flex" }}>
           <LeftBar />

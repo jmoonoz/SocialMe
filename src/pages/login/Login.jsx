@@ -1,9 +1,15 @@
-import React from "react";
+import { useContext } from "react";
 import "../../style/login.scss";
 import { Link } from "react-router-dom";
-import LeftBar from "../../components/LeftBar";
+import { AuthContext } from "../../context/authContext";
 
 export default function Login() {
+  const { login } = useContext(AuthContext);
+
+  const handleLogin = () => {
+    login();
+  };
+
   return (
     <div className="login">
       <div className="card">
@@ -17,7 +23,7 @@ export default function Login() {
           </p>
           <span>Dont have an account?</span>
           <Link to="/register">
-          <button>Register</button>
+            <button>Register</button>
           </Link>
         </div>
         <div className="right">
@@ -25,8 +31,8 @@ export default function Login() {
           <form>
             <input type="text" placeholder="Username" />
             <input type="password" placeholder="Password" />
-           
-              <button>Login</button>      
+
+            <button onClick={handleLogin}>Login</button>
           </form>
         </div>
       </div>

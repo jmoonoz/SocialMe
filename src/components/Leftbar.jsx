@@ -13,15 +13,17 @@ import Tutorials from "../assets/11.png";
 import Courses from "../assets/12.png";
 import Fund from "../assets/13.png";
 import "../style/leftbar.scss";
+import { AuthContext } from "../context/authContext";
 
 const LeftBar = () => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <div className="leftBar">
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img src={Friend} />
-            <span>John Doe</span>
+            <img src={currentUser.profilePic} alt="" />
+            <span>{currentUser.name}</span>
           </div>
           <div className="item">
             <img src={Groups} alt="" />
