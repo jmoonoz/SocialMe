@@ -13,6 +13,7 @@ import RightBar from "./components/RightBar";
 import Home from "./pages/Home";
 import Profile from "./pages/profile/profile";
 import "./index.css";
+import "./style/style.scss"
 
 function App() {
   // will automatically send user to login if not logged in
@@ -21,7 +22,7 @@ function App() {
   // page login
   const Layout = () => {
     return (
-      <div>
+      <div className="theme-dark">
         <Navbar />
         <div style={{ display: "flex" }}>
           <LeftBar />

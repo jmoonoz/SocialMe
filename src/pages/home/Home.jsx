@@ -10,10 +10,10 @@ const Home = () => {
       <h1>hjome</h1>
       <h1>hjome</h1>
       <h1>hjome</h1>
-      <h1>hjome</h1>
-      <h1>hjome</h1>
-      <h1>hjome</h1>
-      <h1>hjome</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
     </div>
   );
 };
