@@ -1,19 +1,15 @@
-import React from 'react';
-import "../../style/home.scss"
+import React from "react";
+import "../../style/home.scss";
+import { Stories } from "../../stories/Stories";
+import { Share } from "../../components/Share";
+import { Posts } from "../../components/Posts";
 
 const Home = () => {
   return (
-    <div className='home'>
-      <h1>hjome</h1>
-      <h1>hjome</h1>
-      <h1>hjome</h1>
-      <h1>hjome</h1>
-      <h1>hjome</h1>
-      <h1>hjome</h1>
-      <h1>home</h1>
-      <h1>home</h1>
-      <h1>home</h1>
-      <h1>home</h1>
+    <div className="home">
+      <Stories />
+      <Share />
+      <Posts />
     </div>
   );
 };

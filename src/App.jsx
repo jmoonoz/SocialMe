@@ -19,7 +19,7 @@ import { AuthContext } from "./context/authContext";
 
 function App() {
   // will automatically send user to login if not logged in
-  const {CurrentUser} = useContext(AuthContext);
+  const {currentUser} = useContext(AuthContext);
 
   const {darkMode} = useContext(DarkModeContext);
 
@@ -43,7 +43,7 @@ function App() {
 
   //if no current user itll return to login
   const ProtectedRoute = ({ children }) => {
-    if (!CurrentUser) {
+    if (!currentUser) {
       return <Navigate to="/login/" />;
     }
     return children;
