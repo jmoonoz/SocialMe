@@ -10,7 +10,7 @@ import Register from "./pages/register/Register";
 import Navbar from "./components/Navbar";
 import LeftBar from "./components/LeftBar";
 import RightBar from "./components/RightBar";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Profile from "./pages/profile/profile";
 import "./index.css";
 import "./style/style.scss"
