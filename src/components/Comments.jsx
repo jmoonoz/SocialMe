@@ -1,11 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-const Comments = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+function Comments() {
+  return (
+    <div>Comments</div>
+  )
+}
 
-export default Comments;
+export default Comments
