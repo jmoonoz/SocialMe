@@ -9,6 +9,15 @@
     overflow: scroll;
     background-color: themed("bgSoft");
     border: themed("border");
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -55,7 +64,7 @@
             p {
               color: themed("textColorSoft");
             }
-            span{
+            span {
               font-weight: 500;
               color: themed("textColor");
             }

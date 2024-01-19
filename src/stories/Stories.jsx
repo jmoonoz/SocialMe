@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "../style/stories.scss";
 import { AuthContext } from "../context/authContext";
 
-export const Stories = () => {
+export const Stories = ({posts}) => {
   const { currentUser } = useContext(AuthContext);
 
   //TEMPORARY DATA
